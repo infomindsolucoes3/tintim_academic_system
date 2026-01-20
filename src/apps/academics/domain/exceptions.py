@@ -1,3 +1,5 @@
+from apps.academics.domain.types import UUID
+
 class DomainError(Exception):
     """
     Base class for all domain-level errors.
@@ -13,7 +15,7 @@ class DuplicateEnrollmentError(DomainError):
     Raised when attempting to enroll a student in a course
     they already participate in.
     """
-    def __init__(self, student_id, course_id):
+    def __init__(self, student_id: UUID, course_id: UUID):
         super().__init__(
             f"Student {student_id} is already enrolled in course {course_id}."
         )
@@ -24,7 +26,7 @@ class StudentNotEnrolledError(DomainError):
     Raised when attempting to perform an action that requires
     a student to be enrolled in a course, but no enrollment exists.
     """
-    def __init__(self, student_id, course_id):
+    def __init__(self, student_id: UUID, course_id: UUID):
         super().__init__(
             f"Student {student_id} is not enrolled in course {course_id}."
         )
@@ -55,7 +57,7 @@ class NoGradesRecordedError(DomainError):
     """
     Raised when an aggregation (e.g., average) is requested but no grades exist.
     """
-    def __init__(self, student_id, course_id):
+    def __init__(self, student_id: UUID, course_id: UUID):
         super().__init__(
             f"No grades recorded for student {student_id} in course {course_id}."
         )

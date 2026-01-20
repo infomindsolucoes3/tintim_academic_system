@@ -1,0 +1,308 @@
+[
+    {
+      "model": "academics.student",
+      "pk": "11111111-1111-1111-1111-111111111111",
+      "fields": {
+        "name": "Alice Johnson",
+        "created_at": "2025-01-10T10:00:00Z",
+        "updated_at": "2025-01-10T10:00:00Z"
+      }
+    },
+    {
+      "model": "academics.student",
+      "pk": "22222222-2222-2222-2222-222222222222",
+      "fields": {
+        "name": "Bruno Silva",
+        "created_at": "2025-01-10T10:05:00Z",
+        "updated_at": "2025-01-10T10:05:00Z"
+      }
+    },
+    {
+      "model": "academics.student",
+      "pk": "33333333-3333-3333-3333-333333333333",
+      "fields": {
+        "name": "Carla Mendes",
+        "created_at": "2025-01-10T10:10:00Z",
+        "updated_at": "2025-01-10T10:10:00Z"
+      }
+    },
+    {
+      "model": "academics.student",
+      "pk": "44444444-4444-4444-4444-444444444444",
+      "fields": {
+        "name": "Daniel Rocha",
+        "created_at": "2025-01-10T10:15:00Z",
+        "updated_at": "2025-01-10T10:15:00Z"
+      }
+    },
+    {
+      "model": "academics.student",
+      "pk": "55555555-5555-5555-5555-555555555555",
+      "fields": {
+        "name": "Elena Costa",
+        "created_at": "2025-01-10T10:20:00Z",
+        "updated_at": "2025-01-10T10:20:00Z"
+      }
+    },
+  
+    {
+      "model": "academics.course",
+      "pk": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa",
+      "fields": {
+        "name": "Mathematics",
+        "created_at": "2025-01-01T09:00:00Z",
+        "updated_at": "2025-01-01T09:00:00Z"
+      }
+    },
+    {
+      "model": "academics.enrollment",
+      "pk": "e1111111-1111-1111-1111-111111111111",
+      "fields": {
+        "student": "11111111-1111-1111-1111-111111111111",
+        "course": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa",
+        "created_at": "2025-01-15T09:00:00Z",
+        "updated_at": "2025-01-15T09:00:00Z"
+      }
+    },
+    {
+      "model": "academics.enrollment",
+      "pk": "e2222222-2222-2222-2222-222222222222",
+      "fields": {
+        "student": "22222222-2222-2222-2222-222222222222",
+        "course": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa",
+        "created_at": "2025-01-15T09:05:00Z",
+        "updated_at": "2025-01-15T09:05:00Z"
+      }
+    },
+    {
+      "model": "academics.enrollment",
+      "pk": "e3333333-3333-3333-3333-333333333333",
+      "fields": {
+        "student": "33333333-3333-3333-3333-333333333333",
+        "course": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa",
+        "created_at": "2025-01-15T09:10:00Z",
+        "updated_at": "2025-01-15T09:10:00Z"
+      }
+    },
+    {
+      "model": "academics.enrollment",
+      "pk": "e4444444-4444-4444-4444-444444444444",
+      "fields": {
+        "student": "44444444-4444-4444-4444-444444444444",
+        "course": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa",
+        "created_at": "2025-01-15T09:15:00Z",
+        "updated_at": "2025-01-15T09:15:00Z"
+      }
+    },
+    {
+      "model": "academics.enrollment",
+      "pk": "e5555555-5555-5555-5555-555555555555",
+      "fields": {
+        "student": "55555555-5555-5555-5555-555555555555",
+        "course": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa",
+        "created_at": "2025-01-15T09:20:00Z",
+        "updated_at": "2025-01-15T09:20:00Z"
+      }
+    },
+    {
+      "model": "academics.grade",
+      "pk": "b1111111-1111-1111-1111-111111111111",
+      "fields": {
+        "enrollment": "e1111111-1111-1111-1111-111111111111",
+        "numeric_value": 95,
+        "created_at": "2025-03-01T10:00:00Z",
+        "updated_at": "2025-03-01T10:00:00Z"
+      }
+    },
+    {
+      "model": "academics.grade",
+      "pk": "b1111111-1111-1111-1111-111111111112",
+      "fields": {
+        "enrollment": "e1111111-1111-1111-1111-111111111111",
+        "numeric_value": 96,
+        "created_at": "2025-06-01T10:00:00Z",
+        "updated_at": "2025-06-01T10:00:00Z"
+      }
+    },
+    {
+      "model": "academics.grade",
+      "pk": "b1111111-1111-1111-1111-111111111113",
+      "fields": {
+        "enrollment": "e1111111-1111-1111-1111-111111111111",
+        "numeric_value": 76,
+        "created_at": "2025-09-01T10:00:00Z",
+        "updated_at": "2025-09-01T10:00:00Z"
+      }
+    },
+    {
+      "model": "academics.grade",
+      "pk": "b1111111-1111-1111-1111-111111111114",
+      "fields": {
+        "enrollment": "e1111111-1111-1111-1111-111111111111",
+        "numeric_value": 89,
+        "created_at": "2025-12-01T10:00:00Z",
+        "updated_at": "2025-12-01T10:00:00Z"
+      }
+    },
+    {
+      "model": "academics.grade",
+      "pk": "b2222222-2222-2222-2222-222222222221",
+      "fields": {
+        "enrollment": "e2222222-2222-2222-2222-222222222222",
+        "numeric_value": 70,
+        "created_at": "2025-02-15T10:00:00Z",
+        "updated_at": "2025-02-15T10:00:00Z"
+      }
+    },
+    {
+      "model": "academics.grade",
+      "pk": "b2222222-2222-2222-2222-222222222222",
+      "fields": {
+        "enrollment": "e2222222-2222-2222-2222-222222222222",
+        "numeric_value": 82,
+        "created_at": "2025-05-15T10:00:00Z",
+        "updated_at": "2025-05-15T10:00:00Z"
+      }
+    },
+    {
+      "model": "academics.grade",
+      "pk": "b2222222-2222-2222-2222-222222222223",
+      "fields": {
+        "enrollment": "e2222222-2222-2222-2222-222222222222",
+        "numeric_value": 59,
+        "created_at": "2025-08-15T10:00:00Z",
+        "updated_at": "2025-08-15T10:00:00Z"
+      }
+    },
+    {
+      "model": "academics.grade",
+      "pk": "b2222222-2222-2222-2222-222222222224",
+      "fields": {
+        "enrollment": "e2222222-2222-2222-2222-222222222222",
+        "numeric_value": 86,
+        "created_at": "2025-11-15T10:00:00Z",
+        "updated_at": "2025-11-15T10:00:00Z"
+      }
+    },
+    {
+      "model": "academics.grade",
+      "pk": "b3333333-3333-3333-3333-333333333331",
+      "fields": {
+        "enrollment": "e3333333-3333-3333-3333-333333333333",
+        "numeric_value": 100,
+        "created_at": "2025-03-20T10:00:00Z",
+        "updated_at": "2025-03-20T10:00:00Z"
+      }
+    },
+    {
+      "model": "academics.grade",
+      "pk": "b3333333-3333-3333-3333-333333333332",
+      "fields": {
+        "enrollment": "e3333333-3333-3333-3333-333333333333",
+        "numeric_value": 92,
+        "created_at": "2025-06-20T10:00:00Z",
+        "updated_at": "2025-06-20T10:00:00Z"
+      }
+    },
+    {
+      "model": "academics.grade",
+      "pk": "b3333333-3333-3333-3333-333333333333",
+      "fields": {
+        "enrollment": "e3333333-3333-3333-3333-333333333333",
+        "numeric_value": 79,
+        "created_at": "2025-09-20T10:00:00Z",
+        "updated_at": "2025-09-20T10:00:00Z"
+      }
+    },
+    {
+      "model": "academics.grade",
+      "pk": "b3333333-3333-3333-3333-333333333334",
+      "fields": {
+        "enrollment": "e3333333-3333-3333-3333-333333333333",
+        "numeric_value": 69,
+        "created_at": "2025-12-20T10:00:00Z",
+        "updated_at": "2025-12-20T10:00:00Z"
+      }
+    },
+    {
+      "model": "academics.grade",
+      "pk": "b4444444-4444-4444-4444-444444444441",
+      "fields": {
+        "enrollment": "e4444444-4444-4444-4444-444444444444",
+        "numeric_value": 83,
+        "created_at": "2025-02-01T10:00:00Z",
+        "updated_at": "2025-02-01T10:00:00Z"
+      }
+    },
+    {
+      "model": "academics.grade",
+      "pk": "b4444444-4444-4444-4444-444444444442",
+      "fields": {
+        "enrollment": "e4444444-4444-4444-4444-444444444444",
+        "numeric_value": 89,
+        "created_at": "2025-05-01T10:00:00Z",
+        "updated_at": "2025-05-01T10:00:00Z"
+      }
+    },
+    {
+      "model": "academics.grade",
+      "pk": "b4444444-4444-4444-4444-444444444443",
+      "fields": {
+        "enrollment": "e4444444-4444-4444-4444-444444444444",
+        "numeric_value": 72,
+        "created_at": "2025-08-01T10:00:00Z",
+        "updated_at": "2025-08-01T10:00:00Z"
+      }
+    },
+    {
+      "model": "academics.grade",
+      "pk": "b4444444-4444-4444-4444-444444444444",
+      "fields": {
+        "enrollment": "e4444444-4444-4444-4444-444444444444",
+        "numeric_value": 59,
+        "created_at": "2025-11-01T10:00:00Z",
+        "updated_at": "2025-11-01T10:00:00Z"
+      }
+    },
+    {
+      "model": "academics.grade",
+      "pk": "b5555555-5555-5555-5555-555555555551",
+      "fields": {
+        "enrollment": "e5555555-5555-5555-5555-555555555555",
+        "numeric_value": 96,
+        "created_at": "2025-01-25T10:00:00Z",
+        "updated_at": "2025-01-25T10:00:00Z"
+      }
+    },
+    {
+      "model": "academics.grade",
+      "pk": "b5555555-5555-5555-5555-555555555552",
+      "fields": {
+        "enrollment": "e5555555-5555-5555-5555-555555555555",
+        "numeric_value": 86,
+        "created_at": "2025-04-25T10:00:00Z",
+        "updated_at": "2025-04-25T10:00:00Z"
+      }
+    },
+    {
+      "model": "academics.grade",
+      "pk": "b5555555-5555-5555-5555-555555555553",
+      "fields": {
+        "enrollment": "e5555555-5555-5555-5555-555555555555",
+        "numeric_value": 82,
+        "created_at": "2025-07-25T10:00:00Z",
+        "updated_at": "2025-07-25T10:00:00Z"
+      }
+    },
+    {
+      "model": "academics.grade",
+      "pk": "b5555555-5555-5555-5555-555555555554",
+      "fields": {
+        "enrollment": "e5555555-5555-5555-5555-555555555555",
+        "numeric_value": 69,
+        "created_at": "2025-10-25T10:00:00Z",
+        "updated_at": "2025-10-25T10:00:00Z"
+      }
+    }
+  ]
+  

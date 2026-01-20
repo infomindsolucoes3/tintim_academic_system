@@ -23,3 +23,4 @@ def list_students_for_course(*, course_id) -> list[Student]:
         .order_by("name")
         .distinct()
     )
+
