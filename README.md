@@ -173,11 +173,31 @@ build_report_card(student_id=student_id)
 
 ---
 
+### Optional Demo Data (Fixtures)
+
+An optional fixture is provided with:
+
+- 5 students
+- 1 course
+- enrollments for all students
+- 4 grades per student across 2025
+- mixed numeric and letter-based grades (stored numerically)
+
+Load with:
+
+```bash
+python manage.py loaddata demo_academics.json
+```
+
+Fixtures are **not required** to run tests.
+
+---
+
 ### Registration
 
 ```python
-create_student(name)
-create_course(name)
+create_student(name="Andrew")
+create_course(name="English Language")
 ```
 
 ### Catalog
@@ -216,25 +236,6 @@ Returns, per course:
 - numeric average
 - letter average
 
----
-
-## Optional Demo Data (Fixtures)
-
-An optional fixture is provided with:
-
-- 5 students
-- 1 course
-- enrollments for all students
-- 4 grades per student across 2025
-- mixed numeric and letter-based grades (stored numerically)
-
-Load with:
-
-```bash
-docker compose run --rm web python manage.py loaddata demo_academics.json
-```
-
-Fixtures are **not required** to run tests.
 
 ---
 
