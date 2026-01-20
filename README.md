@@ -85,7 +85,12 @@ docker compose run --rm web pytest
 
 ---
 
-## Available Domain Services
+## Available Domain Services (python manage.py shell)
+
+### Catalog
+
+list_students()
+list_courses()
 
 ### Enrollment
 
