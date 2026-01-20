@@ -85,12 +85,99 @@ docker compose run --rm web pytest
 
 ---
 
-## Available Domain Services (python manage.py shell)
+## Available Domain Services
+
+### Quick interactive walkthrough (Django shell)
+
+To manually explore the domain services:
+
+1) Enter the Django container:
+
+```bash
+docker exec -it academic_web sh
+```
+
+2) Open the Django shell:
+
+```bash
+python manage.py shell
+```
+
+3) Import the available services:
+
+```python
+import uuid
+
+from apps.academics.services.catalog import list_students, list_courses
+from apps.academics.services.enrollments import enroll_student
+from apps.academics.services.queries import (
+    list_courses_for_student,
+    list_students_for_course,
+)
+from apps.academics.services.grades import (
+    record_grade,
+    get_numeric_grades,
+    get_letter_grades,
+    calculate_numeric_average,
+    calculate_letter_average,
+)
+from apps.academics.services.report_cards import build_report_card
+```
+
+4) Get IDs to work with (students and courses):
+
+```python
+students = list_students()
+courses = list_courses()
+
+students
+courses
+```
+
+Example of picking the first student/course IDs:
+
+```python
+student_id = students[0].id
+course_id = courses[0].id
+```
+
+5) Enroll a student in a course:
+
+```python
+enroll_student(student_id=student_id, course_id=course_id)
+```
+
+6) Record grades (numeric or letter input):
+
+```python
+record_grade(student_id=student_id, course_id=course_id, numeric=88)
+record_grade(student_id=student_id, course_id=course_id, letter="A-")
+```
+
+7) Query and aggregate grades:
+
+```python
+get_numeric_grades(student_id=student_id, course_id=course_id)
+get_letter_grades(student_id=student_id, course_id=course_id)
+
+calculate_numeric_average(student_id=student_id, course_id=course_id)
+calculate_letter_average(student_id=student_id, course_id=course_id)
+```
+
+8) Build the student report card:
+
+```python
+build_report_card(student_id=student_id)
+```
+
+---
 
 ### Catalog
 
+```python
 list_students()
 list_courses()
+```
 
 ### Enrollment
 
