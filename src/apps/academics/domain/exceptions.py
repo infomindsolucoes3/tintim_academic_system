@@ -61,3 +61,13 @@ class NoGradesRecordedError(DomainError):
         super().__init__(
             f"No grades recorded for student {student_id} in course {course_id}."
         )
+
+
+class InvalidStudentNameError(DomainError):
+    def __init__(self, name: str):
+        super().__init__(f"Invalid student name: {name!r}.")
+
+
+class InvalidCourseNameError(DomainError):
+    def __init__(self, name: str):
+        super().__init__(f"Invalid course name: {name!r}.")

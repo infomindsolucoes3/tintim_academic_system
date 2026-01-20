@@ -122,6 +122,7 @@ from apps.academics.services.grades import (
     calculate_letter_average,
 )
 from apps.academics.services.report_cards import build_report_card
+from apps.academics.services.registration import create_student, create_course
 ```
 
 4) Get IDs to work with (students and courses):
@@ -171,6 +172,13 @@ build_report_card(student_id=student_id)
 ```
 
 ---
+
+### Registration
+
+```python
+create_student(name)
+create_course(name)
+```
 
 ### Catalog
 
