@@ -1,0 +1,29 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: docker/django/Dockerfile
+    container_name: academic_web
+    command: ["/entrypoint.sh"]
+    volumes:
+      - ./src:/app
+      - sqlite_data:/data
+    ports:
+      - "8000:8000"
+    environment:
+      DJANGO_SETTINGS_MODULE: config.settings.local
+      SQLITE_PATH: /data/db.sqlite3
+      PYTHONDONTWRITEBYTECODE: "1"
+      PYTHONUNBUFFERED: "1"
+    depends_on:
+      - sqlite
+
+  sqlite:
+    image: busybox:1.36
+    container_name: academic_sqlite
+    command: ["sh", "-c", "mkdir -p /data && touch /data/db.sqlite3 && tail -f /dev/null"]
+    volumes:
+      - sqlite_data:/data
+
+volumes:
+  sqlite_data:
