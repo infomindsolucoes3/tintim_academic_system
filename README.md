@@ -179,7 +179,7 @@ list_courses_for_student(student_id=student_id)
 list_students_for_course(course_id=course_id)
 ```
 
-### Grades recording
+### Grades Recording
 
 ```python
 
@@ -187,7 +187,7 @@ record_grade(student_id=student_id, course_id=course_id, numeric=88)
 record_grade(student_id=student_id, course_id=course_id, letter="A-")
 ```
 
-### Queries and aggregations
+### Queries and Aggregations
 
 ```python
 get_numeric_grades(student_id=student_id, course_id=course_id)
