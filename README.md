@@ -85,9 +85,7 @@ docker compose run --rm web pytest
 
 ---
 
-## Available Domain Services
-
-### Quick interactive walkthrough (Django shell)
+## Run the application and test it manually
 
 To manually explore the domain services:
 
@@ -96,82 +94,6 @@ To manually explore the domain services:
 ```bash
 docker exec -it academic_web sh
 ```
-
-2) Open the Django shell:
-
-```bash
-python manage.py shell
-```
-
-3) Import the available services:
-
-```python
-import uuid
-
-from apps.academics.services.catalog import list_students, list_courses
-from apps.academics.services.enrollments import enroll_student
-from apps.academics.services.queries import (
-    list_courses_for_student,
-    list_students_for_course,
-)
-from apps.academics.services.grades import (
-    record_grade,
-    get_numeric_grades,
-    get_letter_grades,
-    calculate_numeric_average,
-    calculate_letter_average,
-)
-from apps.academics.services.report_cards import build_report_card
-from apps.academics.services.registration import create_student, create_course
-```
-
-4) Get IDs to work with (students and courses):
-
-```python
-students = list_students()
-courses = list_courses()
-
-students
-courses
-```
-
-Example of picking the first student/course IDs:
-
-```python
-student_id = students[0].id
-course_id = courses[0].id
-```
-
-5) Enroll a student in a course:
-
-```python
-enroll_student(student_id=student_id, course_id=course_id)
-```
-
-6) Record grades (numeric or letter input):
-
-```python
-record_grade(student_id=student_id, course_id=course_id, numeric=88)
-record_grade(student_id=student_id, course_id=course_id, letter="A-")
-```
-
-7) Query and aggregate grades:
-
-```python
-get_numeric_grades(student_id=student_id, course_id=course_id)
-get_letter_grades(student_id=student_id, course_id=course_id)
-
-calculate_numeric_average(student_id=student_id, course_id=course_id)
-calculate_letter_average(student_id=student_id, course_id=course_id)
-```
-
-8) Build the student report card:
-
-```python
-build_report_card(student_id=student_id)
-```
-
----
 
 ### Optional Demo Data (Fixtures)
 
@@ -193,10 +115,43 @@ Fixtures are **not required** to run tests.
 
 ---
 
+### Quick interactive walkthrough (Django shell)
+
+1) Open the Django shell:
+
+```bash
+python manage.py shell
+```
+
+2) Import the available services:
+
+```python
+import uuid
+
+from apps.academics.services.catalog import list_students, list_courses
+from apps.academics.services.enrollments import enroll_student
+from apps.academics.services.queries import (
+    list_courses_for_student,
+    list_students_for_course,
+)
+from apps.academics.services.grades import (
+    record_grade,
+    get_numeric_grades,
+    get_letter_grades,
+    calculate_numeric_average,
+    calculate_letter_average,
+)
+from apps.academics.services.report_cards import build_report_card
+from apps.academics.services.registration import create_student, create_course
+```
+---
+
+## Available Domain Services
+
 ### Registration
 
 ```python
-create_student(name="Andrew")
+create_student(name="Andrew Gomez")
 create_course(name="English Language")
 ```
 
@@ -210,15 +165,26 @@ list_courses()
 ### Enrollment
 
 ```python
-enroll_student(student_id, course_id)
-list_courses_for_student(student_id)
-list_students_for_course(course_id)
+
+student_id="790b3193-90c0-4b8c-bf5f-6a42fffdb925"
+course_id="48e0be1a-ff82-4fc7-a272-f83936a31517"
+
+enroll_student(student_id=student_id, course_id=course_id)
+```
+
+### Students and Courses List
+
+```
+list_courses_for_student(student_id=student_id)
+list_students_for_course(course_id=course_id)
 ```
 
 ### Grades
 
 ```python
-record_grade(student_id, course_id, numeric=..., letter=...)
+
+record_grade(student_id=student_id, course_id=course_id, numeric=88)
+record_grade(student_id=student_id, course_id=course_id, letter="A-")
 get_numeric_grades(student_id, course_id)
 get_letter_grades(student_id, course_id)
 calculate_numeric_average(student_id, course_id)
