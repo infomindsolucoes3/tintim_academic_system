@@ -100,7 +100,7 @@ docker exec -it academic_web sh
 An optional fixture is provided with:
 
 - 5 students
-- 1 course
+- 3 courses
 - enrollments for all students
 - 4 grades per student across 2025
 - mixed numeric and letter-based grades (stored numerically)
@@ -128,6 +128,7 @@ python manage.py shell
 ```python
 import uuid
 
+from apps.academics.services.registration import create_student, create_course
 from apps.academics.services.catalog import list_students, list_courses
 from apps.academics.services.enrollments import enroll_student
 from apps.academics.services.queries import (
@@ -142,7 +143,6 @@ from apps.academics.services.grades import (
     calculate_letter_average,
 )
 from apps.academics.services.report_cards import build_report_card
-from apps.academics.services.registration import create_student, create_course
 ```
 ---
 
@@ -179,22 +179,27 @@ list_courses_for_student(student_id=student_id)
 list_students_for_course(course_id=course_id)
 ```
 
-### Grades
+### Grades recording
 
 ```python
 
 record_grade(student_id=student_id, course_id=course_id, numeric=88)
 record_grade(student_id=student_id, course_id=course_id, letter="A-")
-get_numeric_grades(student_id, course_id)
-get_letter_grades(student_id, course_id)
-calculate_numeric_average(student_id, course_id)
-calculate_letter_average(student_id, course_id)
+```
+
+### Queries and aggregations
+
+```python
+get_numeric_grades(student_id=student_id, course_id=course_id)
+get_letter_grades(student_id=student_id, course_id=course_id)
+calculate_numeric_average(student_id=student_id, course_id=course_id)
+calculate_letter_average(student_id=student_id, course_id=course_id)
 ```
 
 ### Report Card
 
 ```python
-build_report_card(student_id)
+build_report_card(student_id=student_id)
 ```
 
 Returns, per course:
